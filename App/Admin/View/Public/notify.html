@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/skin.css" />
+<title>提示信息</title>
+<body>
+	<table width="500" height="100" style="margin-left:38%;margin-top:10%;">
+      <tr>
+        <td>
+        <img src="__PUBLIC__/images/lb.png" width="35%" high="10%"/><span style="align:center;color:red;font-weight:bold">{$message}{$error}</span><br>
+        <p>系统将在<span style="color:blue;font-weight:bold"><b id="wait">{$waitSecond}</b></span>秒后自动跳转，<a id="href" href="{$jumpUrl}"><span style="color:blue;font-weight:bold">如果未跳转请直接点击这里</a>。</span></p>
+        <script type="text/javascript">
+			(function(){
+			var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+			var interval = setInterval(function(){
+				var time = --wait.innerHTML;
+				if(time <= 0) {
+					location.href = href;
+					clearInterval(interval);
+				};
+			}, 1000);
+			})();
+		</script>
+        </td>
+      </tr>
+    </table>
+</body>

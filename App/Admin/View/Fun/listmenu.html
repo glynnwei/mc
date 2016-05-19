@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/skin.css" />
+</head>
+    <body>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <!-- 头部开始 -->
+            <tr>
+                <td width="17" valign="top" background="__PUBLIC__/images/mail_left_bg.gif">
+                    <img src="__PUBLIC__/images/left_top_right.gif" width="17" height="29" />
+                </td>
+                <td valign="top" background="__PUBLIC__/images/content_bg.gif">
+                    <table width="100%" height="31" border="0" cellpadding="0" cellspacing="0" background="__PUBLIC__/images/content_bg.gif">
+                        <tr><td height="31"><div class="title">子模块列表</div></td></tr>
+                    </table>
+                </td>
+                <td width="16" valign="top" background="__PUBLIC__/images/mail_right_bg.gif"><img src="__PUBLIC__/images/nav_right_bg.gif" width="16" height="29" /></td>
+            </tr>
+            <!-- 中间部分开始 -->
+            <tr>
+                <!--第一行左边框-->
+                <td valign="middle" background="__PUBLIC__/images/mail_left_bg.gif">&nbsp;</td>
+                <!--第一行中间内容-->
+                <td valign="top" bgcolor="#F7F8F9">
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <!-- 空白行-->
+                        <tr><td colspan="2" valign="top">&nbsp;</td><td>&nbsp;</td><td valign="top">&nbsp;</td></tr>
+                        <tr>
+                            <td colspan="4">
+                                <table>
+                                    <tr>
+                                        <td width="100" align="center"><img src="__PUBLIC__/images/mime.gif" /></td>
+                                        <td valign="bottom"><h3 style="letter-spacing:1px;">
+													<script>
+												     		function del(){
+												          		if(window.confirm('请确认是否删除？')){
+												          			document.myform.submit();
+												          		}
+												      		}
+												     </script>
+												     <input class="btn" type="button" onclick="history.go(-1);" value="上级模块" />
+													 <span class="btn"><a href="__URL__/addmenu">添加子模块</a></span>
+													 <span class="btn"><a href="#" onclick="del();">删除</a></span>
+                                        </h3></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- 一条线 -->
+                        <tr>
+                            <td height="40" colspan="4">
+                                <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                                    <tr><td></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- 添加栏目开始 -->
+                        <tr>
+                            <td width="2%">&nbsp;</td>
+                            <td width="96%">
+                                <table width="100%">
+                                    <tr>
+                                        <td colspan="2">
+                                            <form action="__URL__/delete" method="post" name="myform">
+                                                <table width="100%"  class="cont tr_color">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>编号</th>
+                                                        <th>模块名称</th>
+                                                        <th>模块控制器</th>
+                                                    </tr>
+													<volist name="list" id="vo" key="k">
+                                                    <tr align="center" class="d">
+                                                        <td><input type="checkbox" name="did[{$k}]" value="{$vo.id}" /></td>
+                                                        <td>{$vo.id}</td>
+                                                        <td><a href='__URL__/editmenu?id={$vo.id}'>{$vo.caption}</a></td>
+														<td>{$vo.node_url}</td>
+                                                    </tr>
+                                                    </volist>
+                                                    <tr><td colspan="4" align="right"><div class="vpager">{$page}</div></td></tr>
+                                                </table>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="2%">&nbsp;</td>
+                        </tr>
+                        <!-- 添加栏目结束 -->
+                        <tr>
+                            <td height="40" colspan="4">
+                                <table width="100%" height="1" border="0" cellpadding="0" cellspacing="0" bgcolor="#CCCCCC">
+                                    <tr><td></td></tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td background="__PUBLIC__/images/mail_right_bg.gif">&nbsp;</td>
+            </tr>
+            <!-- 底部部分 -->
+            <tr>
+                <td valign="bottom" background="__PUBLIC__/images/mail_left_bg.gif">
+                    <img src="__PUBLIC__/images/buttom_left.gif" width="17" height="17" />
+                </td>
+                <td background="__PUBLIC__/images/buttom_bgs.gif">
+                    <img src="__PUBLIC__/images/buttom_bgs.gif" width="17" height="17">
+                </td>
+                <td valign="bottom" background="__PUBLIC__/images/mail_right_bg.gif">
+                    <img src="__PUBLIC__/images/buttom_right.gif" width="16" height="17" />
+                </td>           
+            </tr>
+        </table>
+    </body>
+</html>
+
+
